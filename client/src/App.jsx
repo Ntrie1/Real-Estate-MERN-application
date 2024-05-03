@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import SignUp from './pages/SignUp';
 import About from './pages/About';
 import Profile from './pages/Profile';
+import SignIn from './pages/SignIn';
 
 export const App = () => {
   return (
