@@ -214,11 +214,7 @@ try {
           {loading ? 'Loading...' : 'Update'}
         </button>
         <Link className='bg-green-700 text-white rounded-lg p-3 uppercase hover:opacity-95 text-center' to={'/create-listing'}>
-
-
-
           Create Listing
-
         </Link>
       </form>
 
@@ -257,7 +253,9 @@ try {
 
               <div className='flex flex-col items-center'>
                 <button onClick={() => handleListingDelete(listing._id)} className='text-red-700 uppercase'>Delete</button>
+                <Link to={`/update-listing/${listing._id}`}>
                 <button className='text-green-700 uppercase'>Edit</button>
+                </Link>
               </div>
 
 
