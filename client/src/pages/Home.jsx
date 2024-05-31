@@ -100,8 +100,8 @@ export default function Home() {
             <div className='my-3'>
               <h2 className='text-2xl font-semibold text-slate-600'>Recent Offers</h2>
               <Link
-               to={'/search?offer=true'}
-               className='text-sm text-blue-800 hover:underline'>
+                to={'/search?offer=true'}
+                className='text-sm text-blue-800 hover:underline'>
                 Show more offers
               </Link>
             </div>
@@ -115,13 +115,13 @@ export default function Home() {
           </div>
         )}
 
-{rentListings && rentListings.length > 0 && (
+        {rentListings && rentListings.length > 0 && (
           <div>
             <div className='my-3'>
               <h2 className='text-2xl font-semibold text-slate-600'>Recent places for Rent</h2>
               <Link
-               to={'/search?offer=true'}
-               className='text-sm text-blue-800 hover:underline'>
+                to={'/search?offer=true'}
+                className='text-sm text-blue-800 hover:underline'>
                 Show more places for rent
               </Link>
             </div>
@@ -136,13 +136,13 @@ export default function Home() {
         )}
 
 
-{saleListings && saleListings.length > 0 && (
+        {saleListings && saleListings.length > 0 && (
           <div>
             <div className='my-3'>
               <h2 className='text-2xl font-semibold text-slate-600'>Recent places for Sale</h2>
               <Link
-               to={'/search?offer=true'}
-               className='text-sm text-blue-800 hover:underline'>
+                to={'/search?offer=true'}
+                className='text-sm text-blue-800 hover:underline'>
                 Show more places for sale
               </Link>
             </div>
