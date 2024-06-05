@@ -5,12 +5,16 @@ import userRouter from './routes/user.route.js';
 import authRouter from './routes/auth.route.js';
 import listingRouter from './routes/listing.route.js';
 import cookieParser from 'cookie-parser';
+import path from 'path';
 dotenv.config();
 
 mongoose
     .connect('mongodb://127.0.0.1:27017/realEstate')
     .then(() => console.log('successfully conntected to mongoDB!'))
     .catch((err) => console.log(err));
+
+const __direname = path.resolve();
+
 
 const app = express();
 
@@ -24,12 +28,18 @@ app.use('/api/user', userRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/listing', listingRouter);
 
+app.use(express.static(path.join(__direname, '/client/dist')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__direname, 'client', 'dist', 'index.html'));
+});
+
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500;
     const message = err.message || 'Internal Server Error';
-    
+
     return res.status(statusCode).json({
-        success: false, 
+        success: false,
         statusCode,
         message
     });
